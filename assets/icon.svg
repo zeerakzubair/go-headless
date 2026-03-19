@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="#1d2327"/>
+
+  <!-- Left bracket { -->
+  <path d="M72 80 C72 80, 56 80, 56 96 L56 112 C56 112, 56 128, 40 128 C56 128, 56 144, 56 144 L56 160 C56 160, 56 176, 72 176"
+        stroke="#69f0ae" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Right bracket } -->
+  <path d="M184 80 C184 80, 200 80, 200 96 L200 112 C200 112, 200 128, 216 128 C200 128, 200 144, 200 144 L200 160 C200 160, 200 176, 184 176"
+        stroke="#69f0ae" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Lightning bolt in center -->
+  <path d="M140 88 L116 132 L136 132 L120 168"
+        stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Small dot accents -->
+  <circle cx="128" cy="48" r="4" fill="#69f0ae" opacity="0.6"/>
+  <circle cx="128" cy="208" r="4" fill="#69f0ae" opacity="0.6"/>
+</svg>
