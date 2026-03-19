@@ -102,8 +102,8 @@ class Headless_Mode_Frontend {
 		}
 
 		wp_die(
-			'<h1>' . esc_html__( 'GoHeadless', 'headless-mode' ) . '</h1><p>' . esc_html( $this->settings['message'] ) . '</p>',
-			esc_html__( 'GoHeadless', 'headless-mode' ),
+			'<h1>' . esc_html__( 'GoHeadless', 'goheadless' ) . '</h1><p>' . esc_html( $this->settings['message'] ) . '</p>',
+			esc_html__( 'GoHeadless', 'goheadless' ),
 			array( 'response' => $response_code )
 		);
 	}
@@ -249,7 +249,7 @@ class Headless_Mode_Frontend {
 		if ( ! is_user_logged_in() ) {
 			return new WP_Error(
 				'rest_not_logged_in',
-				__( 'You must be authenticated to access the REST API.', 'headless-mode' ),
+				__( 'You must be authenticated to access the REST API.', 'goheadless' ),
 				array( 'status' => 401 )
 			);
 		}
@@ -264,8 +264,8 @@ class Headless_Mode_Frontend {
 	 */
 	public function disable_feed() {
 		wp_die(
-			esc_html__( 'RSS feeds are disabled on this site.', 'headless-mode' ),
-			esc_html__( 'Feed Disabled', 'headless-mode' ),
+			esc_html__( 'RSS feeds are disabled on this site.', 'goheadless' ),
+			esc_html__( 'Feed Disabled', 'goheadless' ),
 			array( 'response' => 403 )
 		);
 	}

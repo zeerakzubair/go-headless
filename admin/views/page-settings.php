@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $settings   = headless_mode_get_settings();
 $active_tab = $this->get_active_tab();
-$page_url   = admin_url( 'options-general.php?page=headless-mode' );
+$page_url   = admin_url( 'options-general.php?page=goheadless' );
 ?>
 <div class="wrap headless-mode-wrap">
 
@@ -20,7 +20,7 @@ $page_url   = admin_url( 'options-general.php?page=headless-mode' );
 		<div class="headless-mode-header-left">
 			<span class="headless-mode-header-icon dashicons dashicons-rest-api"></span>
 			<div>
-				<h1><?php esc_html_e( 'GoHeadless', 'headless-mode' ); ?></h1>
+				<h1><?php esc_html_e( 'GoHeadless', 'goheadless' ); ?></h1>
 				<span class="headless-mode-header-version">
 					<?php
 					/* translators: %s: plugin version number */
@@ -33,11 +33,11 @@ $page_url   = admin_url( 'options-general.php?page=headless-mode' );
 			<?php if ( $settings['enabled'] ) : ?>
 				<span class="headless-mode-header-status headless-mode-header-status--active">
 					<span class="headless-mode-pulse"></span>
-					<?php esc_html_e( 'Frontend Blocked', 'headless-mode' ); ?>
+					<?php esc_html_e( 'Frontend Blocked', 'goheadless' ); ?>
 				</span>
 			<?php else : ?>
 				<span class="headless-mode-header-status headless-mode-header-status--inactive">
-					<?php esc_html_e( 'Inactive', 'headless-mode' ); ?>
+					<?php esc_html_e( 'Inactive', 'goheadless' ); ?>
 				</span>
 			<?php endif; ?>
 		</div>
@@ -47,27 +47,27 @@ $page_url   = admin_url( 'options-general.php?page=headless-mode' );
 		<a href="<?php echo esc_url( add_query_arg( 'tab', 'general', $page_url ) ); ?>"
 			class="nav-tab <?php echo esc_attr( 'general' === $active_tab ? 'nav-tab-active' : '' ); ?>">
 			<span class="dashicons dashicons-admin-settings"></span>
-			<?php esc_html_e( 'General', 'headless-mode' ); ?>
+			<?php esc_html_e( 'General', 'goheadless' ); ?>
 		</a>
 		<a href="<?php echo esc_url( add_query_arg( 'tab', 'api', $page_url ) ); ?>"
 			class="nav-tab <?php echo esc_attr( 'api' === $active_tab ? 'nav-tab-active' : '' ); ?>">
 			<span class="dashicons dashicons-rest-api"></span>
-			<?php esc_html_e( 'API & Routes', 'headless-mode' ); ?>
+			<?php esc_html_e( 'API & Routes', 'goheadless' ); ?>
 		</a>
 		<a href="<?php echo esc_url( add_query_arg( 'tab', 'security', $page_url ) ); ?>"
 			class="nav-tab <?php echo esc_attr( 'security' === $active_tab ? 'nav-tab-active' : '' ); ?>">
 			<span class="dashicons dashicons-shield"></span>
-			<?php esc_html_e( 'Security', 'headless-mode' ); ?>
+			<?php esc_html_e( 'Security', 'goheadless' ); ?>
 		</a>
 		<a href="<?php echo esc_url( add_query_arg( 'tab', 'status', $page_url ) ); ?>"
 			class="nav-tab <?php echo esc_attr( 'status' === $active_tab ? 'nav-tab-active' : '' ); ?>">
 			<span class="dashicons dashicons-dashboard"></span>
-			<?php esc_html_e( 'Status', 'headless-mode' ); ?>
+			<?php esc_html_e( 'Status', 'goheadless' ); ?>
 		</a>
 		<a href="<?php echo esc_url( add_query_arg( 'tab', 'about', $page_url ) ); ?>"
 			class="nav-tab <?php echo esc_attr( 'about' === $active_tab ? 'nav-tab-active' : '' ); ?>">
 			<span class="dashicons dashicons-info-outline"></span>
-			<?php esc_html_e( 'About', 'headless-mode' ); ?>
+			<?php esc_html_e( 'About', 'goheadless' ); ?>
 		</a>
 	</nav>
 
@@ -90,14 +90,14 @@ $page_url   = admin_url( 'options-general.php?page=headless-mode' );
 			?>
 
 			<div class="headless-mode-form-actions">
-				<?php submit_button( __( 'Save Changes', 'headless-mode' ), 'primary', 'submit', false ); ?>
+				<?php submit_button( __( 'Save Changes', 'goheadless' ), 'primary', 'submit', false ); ?>
 			</div>
 		</form>
 
 		<form method="post" class="headless-mode-reset-form">
 			<input type="hidden" name="headless_mode_reset" value="1" />
 			<?php wp_nonce_field( 'headless_mode_reset', 'headless_mode_reset_nonce' ); ?>
-			<?php submit_button( __( 'Reset to Defaults', 'headless-mode' ), 'secondary headless-mode-reset-btn', 'reset-defaults', false ); ?>
+			<?php submit_button( __( 'Reset to Defaults', 'goheadless' ), 'secondary headless-mode-reset-btn', 'reset-defaults', false ); ?>
 		</form>
 	<?php elseif ( 'status' === $active_tab ) : ?>
 		<?php $this->render_tab_status( $settings ); ?>

@@ -10,7 +10,7 @@
  * Author URI:        https://zetheriallabs.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       headless-mode
+ * Text Domain:       goheadless
  * Domain Path:       /languages
  *
  * @package Headless_Mode
@@ -90,7 +90,7 @@ function headless_mode_php_version_notice() {
 		'<div class="notice notice-error"><p>%s</p></div>',
 		sprintf(
 			/* translators: 1: Required PHP version, 2: Current PHP version. */
-			esc_html__( 'GoHeadless requires PHP %1$s or higher. You are running PHP %2$s. The plugin has been deactivated.', 'headless-mode' ),
+			esc_html__( 'GoHeadless requires PHP %1$s or higher. You are running PHP %2$s. The plugin has been deactivated.', 'goheadless' ),
 			esc_html( HEADLESS_MODE_MIN_PHP ),
 			esc_html( PHP_VERSION )
 		)
@@ -115,7 +115,7 @@ require_once HEADLESS_MODE_DIR . 'includes/class-headless-mode-frontend.php';
 function headless_mode_get_defaults() {
 	return array(
 		'enabled'              => 1,
-		'message'              => __( 'This site is running in headless mode. The frontend is powered by a separate application.', 'headless-mode' ),
+		'message'              => __( 'This site is running in headless mode. The frontend is powered by a separate application.', 'goheadless' ),
 		'redirect_url'         => '',
 		'response_code'        => 403,
 		'whitelist'            => "/wp-json\n/wp-admin\n/wc-auth",

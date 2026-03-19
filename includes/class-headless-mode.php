@@ -67,7 +67,7 @@ class Headless_Mode {
 		add_action(
 			'init',
 			function () {
-				load_plugin_textdomain( 'headless-mode', false, dirname( HEADLESS_MODE_BASENAME ) . '/languages' );
+				load_plugin_textdomain( 'goheadless', false, dirname( HEADLESS_MODE_BASENAME ) . '/languages' );
 			}
 		);
 	}
