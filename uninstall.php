@@ -2,35 +2,52 @@
 /**
  * Uninstall handler for GoHeadless.
  *
- * Removes all plugin data from the database on uninstall.
+ * Fires when the plugin is deleted from WordPress (not just deactivated).
+ * Removes ALL plugin data from the database.
  *
  * @package Headless_Mode
  */
 
-// Exit if not called by WordPress uninstall.
+// Exit if not called by WordPress uninstall process.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
 /**
- * Remove plugin options for a single site.
+ * Remove all plugin options for a single site.
  *
  * @return void
  */
-function headless_mode_delete_options() {
+function headless_mode_uninstall_cleanup() {
+	// Main plugin options.
 	delete_option( 'headless_mode_settings' );
 	delete_option( 'headless_mode_version' );
-	delete_option( 'hm_settings' ); // Legacy option.
+
+	// Legacy option from v1.x.
+	delete_option( 'hm_settings' );
+
+	// Clean up any transients the plugin may have created.
+	delete_transient( 'headless_mode_settings_errors' );
+
+	// Remove the settings API registration (stored in alloptions cache).
+	// WordPress handles this automatically but we clear for safety.
+	wp_cache_delete( 'alloptions', 'options' );
+	wp_cache_delete( 'notoptions', 'options' );
 }
 
-// Handle multisite.
+// Handle multisite: clean each site individually.
 if ( is_multisite() ) {
-	$sites = get_sites( array( 'fields' => 'ids' ) );
-	foreach ( $sites as $site_id ) {
+	$site_ids = get_sites(
+		array(
+			'fields'   => 'ids',
+			'number'   => 0, // All sites.
+		)
+	);
+	foreach ( $site_ids as $site_id ) {
 		switch_to_blog( $site_id );
-		headless_mode_delete_options();
+		headless_mode_uninstall_cleanup();
 		restore_current_blog();
 	}
 } else {
-	headless_mode_delete_options();
+	headless_mode_uninstall_cleanup();
 }

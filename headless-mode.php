@@ -178,9 +178,11 @@ register_activation_hook( __FILE__, 'headless_mode_activate' );
  * @return void
  */
 function headless_mode_deactivate() {
-	// Nothing to clean on deactivation for now.
-	// Options are preserved so settings survive deactivate/reactivate.
-	// Options are only removed on uninstall (delete).
+	// Unregister settings to prevent orphan entries.
+	unregister_setting( 'headless_mode_group', 'headless_mode_settings' );
+
+	// Clear any cached data.
+	wp_cache_delete( 'alloptions', 'options' );
 }
 register_deactivation_hook( __FILE__, 'headless_mode_deactivate' );
 
