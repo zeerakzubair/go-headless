@@ -4,7 +4,7 @@ Tags: headless, woocommerce, api, decoupled, rest-api, headless cms, nextjs, gat
 Requires at least: 5.8
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,39 +109,22 @@ Deactivate and delete the plugin. All settings are automatically removed from th
 
 == Changelog ==
 
-= 2.0.0 =
-* Complete plugin rewrite with professional architecture
-* Added tabbed admin interface (General, API & Routes, Security, Status, About)
-* Added configurable HTTP response code (403, 200, 404, 503)
-* Added CORS header management with specific origin support
-* Added REST API restriction option for authenticated-only access
-* Added security hardening: disable RSS feeds, XML-RPC, oEmbed
-* Added cleanup options: remove WP version, emoji scripts, shortlink, RSD link, WLW manifest
-* Added status dashboard showing current configuration and environment
-* Added plugin action link (Settings) on the Plugins page
-* Added Pro feature teaser for future premium version
-* Added proper data sanitization and validation on all settings
-* Added clean uninstall handler that removes all plugin data
-* Added activation hook with default settings and migration from v1.x
-* Added version-based upgrade routine
-* Added minimum PHP version check (7.4+)
-* Added full internationalization support
-* Improved code to follow WordPress Coding Standards
-* Improved prefix from `hm_` to `headless_mode_` to prevent conflicts
-* Improved frontend blocking to also bypass AJAX and WP-CLI requests
-* Changed default response code from 200 to 403 (Forbidden)
-* Changed redirect to use `wp_redirect` with `esc_url_raw` for external domain support
-
-= 1.1.0 =
-* Added admin settings page
-* Added custom message option
-* Added redirect URL option
-* Added route whitelist
-
 = 1.0.0 =
 * Initial release
-
-== Upgrade Notice ==
-
-= 2.0.0 =
-Major update with new admin UI, security features, and WordPress coding standards compliance. Settings from v1.x are automatically migrated.
+* Tabbed admin interface (General, API & Routes, Security, Status, About)
+* Toggle headless mode on/off with visual switch
+* Custom blocked page message
+* Configurable HTTP response code (403, 200, 404, 503)
+* Frontend redirect to external app URL
+* Route whitelisting
+* CORS header management with specific origin support
+* REST API restriction option for authenticated-only access
+* Security hardening: disable RSS feeds, XML-RPC, oEmbed
+* Cleanup options: remove WP version, emoji scripts, shortlink, RSD link, WLW manifest
+* Status dashboard showing current configuration and environment
+* Admin bar indicator when headless mode is active
+* Plugin action link (Settings) on the Plugins page
+* Clean uninstall handler that removes all plugin data
+* Multisite support
+* Full internationalization support
+* WordPress Coding Standards compliant

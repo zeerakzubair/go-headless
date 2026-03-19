@@ -822,12 +822,12 @@ class Headless_Mode_Admin {
 				<h3><?php esc_html_e( 'Links & Support', 'headless-mode' ); ?></h3>
 				<ul>
 					<li>
-						<a href="https://zetheriallabs.com/goheadless" target="_blank" rel="noopener noreferrer">
-							<?php esc_html_e( 'Plugin Website', 'headless-mode' ); ?>
+						<a href="https://github.com/zeerakzubair/go-headless" target="_blank" rel="noopener noreferrer">
+							<?php esc_html_e( 'GitHub Repository', 'headless-mode' ); ?>
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/zeerakzubair/headless-mode/issues" target="_blank" rel="noopener noreferrer">
+						<a href="https://github.com/zeerakzubair/go-headless/issues" target="_blank" rel="noopener noreferrer">
 							<?php esc_html_e( 'Report a Bug', 'headless-mode' ); ?>
 						</a>
 					</li>

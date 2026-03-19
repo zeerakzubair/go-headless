@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name:       GoHeadless — WordPress & WooCommerce Headless CMS
- * Plugin URI:        https://zetheriallabs.com/goheadless
+ * Plugin URI:        https://github.com/zeerakzubair/go-headless
  * Description:       Convert your WordPress or WooCommerce site into a headless CMS. Block frontend access while keeping REST API, Store API, and wp-admin fully functional.
- * Version:           2.0.0
+ * Version:           1.0.0
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Zeerak Zubair
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @var string
  */
-define( 'HEADLESS_MODE_VERSION', '2.0.0' );
+define( 'HEADLESS_MODE_VERSION', '1.0.0' );
 
 /**
  * Plugin directory path.
