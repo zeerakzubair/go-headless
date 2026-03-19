@@ -1,0 +1,24 @@
+/**
+ * GoHeadless Admin Bar Styles
+ *
+ * @package Headless_Mode
+ */
+
+#wpadminbar .headless-mode-admin-bar .ab-item {
+	color: #69f0ae !important;
+}
+
+#wpadminbar .headless-mode-admin-bar .ab-icon {
+	font-size: 16px !important;
+	margin-right: 4px;
+}
+
+#wpadminbar .headless-mode-admin-bar .ab-icon::before {
+	content: "\f124";
+	top: 3px;
+	color: #69f0ae !important;
+}
+
+#wpadminbar .headless-mode-admin-bar:hover .ab-item {
+	color: #fff !important;
+}

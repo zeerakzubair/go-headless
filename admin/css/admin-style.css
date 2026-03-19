@@ -1,0 +1,473 @@
+/**
+ * GoHeadless Admin Styles
+ *
+ * @package Headless_Mode
+ */
+
+/* ============================================
+   Header / Hero
+   ============================================ */
+.headless-mode-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: linear-gradient(135deg, #1d2327 0%, #2c3338 100%);
+	color: #fff;
+	padding: 20px 24px;
+	border-radius: 6px;
+	margin: 16px 0 20px;
+}
+
+.headless-mode-header-left {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.headless-mode-header-icon {
+	font-size: 32px;
+	width: 32px;
+	height: 32px;
+	opacity: 0.9;
+}
+
+.headless-mode-header h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 22px;
+	color: #fff;
+	line-height: 1.2;
+}
+
+.headless-mode-header-version {
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.headless-mode-header-status {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 14px;
+	border-radius: 20px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.headless-mode-header-status--active {
+	background: rgba(0, 200, 83, 0.15);
+	color: #69f0ae;
+	border: 1px solid rgba(0, 200, 83, 0.3);
+}
+
+.headless-mode-header-status--inactive {
+	background: rgba(255, 255, 255, 0.1);
+	color: rgba(255, 255, 255, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Pulse animation */
+.headless-mode-pulse {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #69f0ae;
+	animation: headless-mode-pulse-anim 2s ease-in-out infinite;
+}
+
+@keyframes headless-mode-pulse-anim {
+	0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(105, 240, 174, 0.7); }
+	50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(105, 240, 174, 0); }
+}
+
+/* ============================================
+   Settings page wrapper
+   ============================================ */
+.headless-mode-wrap {
+	max-width: 960px;
+}
+
+.headless-mode-wrap .nav-tab-wrapper {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #c3c4c7;
+}
+
+.headless-mode-wrap .nav-tab {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 14px;
+}
+
+.headless-mode-wrap .nav-tab .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+}
+
+/* ============================================
+   Section cards
+   ============================================ */
+.headless-mode-section {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	padding: 20px 24px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.headless-mode-section h2 {
+	margin-top: 0;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #f0f0f1;
+	font-size: 1.15em;
+	color: #1d2327;
+}
+
+.headless-mode-section p.description {
+	color: #646970;
+	font-style: normal;
+	margin-top: 4px;
+}
+
+/* ============================================
+   Form table overrides
+   ============================================ */
+.headless-mode-section .form-table th {
+	width: 200px;
+	padding-left: 0;
+	vertical-align: top;
+	padding-top: 18px;
+}
+
+.headless-mode-section .form-table td {
+	padding-left: 0;
+}
+
+.headless-mode-section .form-table textarea {
+	width: 100%;
+	max-width: 500px;
+}
+
+.headless-mode-section .form-table input[type="url"],
+.headless-mode-section .form-table input[type="text"] {
+	width: 100%;
+	max-width: 500px;
+}
+
+/* ============================================
+   Toggle switch (SaaS-grade)
+   ============================================ */
+.headless-mode-switch {
+	position: relative;
+	display: inline-block;
+	width: 44px;
+	height: 24px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.headless-mode-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+.headless-mode-slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #c3c4c7;
+	border-radius: 24px;
+	transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.headless-mode-slider::before {
+	content: "";
+	position: absolute;
+	height: 18px;
+	width: 18px;
+	left: 3px;
+	bottom: 3px;
+	background-color: #fff;
+	border-radius: 50%;
+	transition: transform 0.25s ease;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.headless-mode-switch input:checked + .headless-mode-slider {
+	background-color: #2271b1;
+}
+
+.headless-mode-switch input:checked + .headless-mode-slider::before {
+	transform: translateX(20px);
+}
+
+.headless-mode-switch input:focus + .headless-mode-slider {
+	box-shadow: 0 0 0 2px #2271b1;
+}
+
+.headless-mode-switch-label {
+	display: inline-block;
+	margin-left: 10px;
+	vertical-align: middle;
+	line-height: 24px;
+	color: #1d2327;
+}
+
+/* ============================================
+   Hidden (conditional fields)
+   ============================================ */
+.headless-mode-hidden {
+	display: none;
+}
+
+/* ============================================
+   Form actions
+   ============================================ */
+.headless-mode-form-actions {
+	padding: 16px 0;
+}
+
+.headless-mode-reset-form {
+	margin-top: 4px;
+	padding-top: 16px;
+	border-top: 1px solid #f0f0f1;
+}
+
+.headless-mode-reset-btn {
+	color: #b32d2e !important;
+	border-color: #b32d2e !important;
+}
+
+.headless-mode-reset-btn:hover {
+	background: #b32d2e !important;
+	color: #fff !important;
+}
+
+/* ============================================
+   Status dashboard
+   ============================================ */
+.headless-mode-status-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 16px;
+}
+
+.headless-mode-status-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	padding: 16px 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	transition: border-color 0.2s ease;
+}
+
+.headless-mode-status-card:hover {
+	border-color: #2271b1;
+}
+
+.headless-mode-status-card h3 {
+	margin: 0 0 8px;
+	font-size: 12px;
+	color: #646970;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-weight: 600;
+}
+
+.headless-mode-status-card .status-value {
+	font-size: 13px;
+	color: #1d2327;
+	line-height: 1.6;
+}
+
+.headless-mode-status-card code {
+	font-size: 12px;
+	background: #f0f0f1;
+	padding: 2px 6px;
+	border-radius: 3px;
+	word-break: break-all;
+}
+
+.status-badge {
+	display: inline-block;
+	padding: 3px 12px;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.status-badge--on {
+	background: #d4edda;
+	color: #155724;
+}
+
+.status-badge--off {
+	background: #f8d7da;
+	color: #721c24;
+}
+
+.status-badge--info {
+	background: #e8f0fe;
+	color: #1a56db;
+}
+
+/* ============================================
+   About page
+   ============================================ */
+.headless-mode-about {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.headless-mode-about-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	padding: 20px 24px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.headless-mode-about-card h3 {
+	margin-top: 0;
+	font-size: 1.1em;
+	color: #1d2327;
+}
+
+.headless-mode-about-card ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.headless-mode-about-card ul li {
+	margin-bottom: 8px;
+	padding-left: 22px;
+	position: relative;
+	color: #50575e;
+}
+
+.headless-mode-about-card ul li::before {
+	content: "\f147";
+	font-family: dashicons;
+	position: absolute;
+	left: 0;
+	color: #2271b1;
+	font-size: 14px;
+}
+
+.headless-mode-about-card a {
+	text-decoration: none;
+}
+
+.headless-mode-about-card a:hover {
+	text-decoration: underline;
+}
+
+/* ============================================
+   Pro teaser
+   ============================================ */
+.headless-mode-pro-teaser {
+	background: linear-gradient(135deg, #f8f9fa 0%, #e8edf3 100%);
+	border: 2px dashed #2271b1;
+	border-radius: 8px;
+	padding: 28px;
+	margin-top: 24px;
+	text-align: center;
+}
+
+.headless-mode-pro-teaser h3 {
+	margin-top: 0;
+	color: #1d2327;
+	font-size: 1.3em;
+}
+
+.headless-mode-pro-teaser > p {
+	color: #646970;
+	margin-bottom: 20px;
+}
+
+.headless-mode-pro-teaser .pro-features-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 8px 16px;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.headless-mode-pro-teaser .pro-features-list li {
+	padding: 8px 0 8px 28px;
+	position: relative;
+	color: #50575e;
+	font-size: 13px;
+}
+
+.headless-mode-pro-teaser .pro-features-list li::before {
+	content: "\f147";
+	font-family: dashicons;
+	position: absolute;
+	left: 0;
+	color: #2271b1;
+	font-size: 16px;
+}
+
+.headless-mode-pro-badge {
+	display: inline-block;
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+	padding: 3px 10px;
+	border-radius: 4px;
+	margin-left: 8px;
+	vertical-align: middle;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media screen and (max-width: 782px) {
+	.headless-mode-header {
+		flex-direction: column;
+		gap: 12px;
+		text-align: center;
+	}
+
+	.headless-mode-header-left {
+		flex-direction: column;
+	}
+
+	.headless-mode-section .form-table th {
+		width: auto;
+	}
+
+	.headless-mode-status-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.headless-mode-about {
+		grid-template-columns: 1fr;
+	}
+
+	.headless-mode-wrap .nav-tab {
+		padding: 6px 10px;
+		font-size: 12px;
+	}
+
+	.headless-mode-wrap .nav-tab .dashicons {
+		display: none;
+	}
+}

@@ -1,0 +1,18 @@
+# Auto detect text files and normalise line endings
+* text=auto
+
+# PHP files
+*.php text eol=lf
+
+# CSS/JS
+*.css text eol=lf
+*.js text eol=lf
+
+# Markdown/Text
+*.md text eol=lf
+*.txt text eol=lf
+
+# Exclude from release zip (wp-cli dist-archive)
+.gitignore export-ignore
+.gitattributes export-ignore
+.github/ export-ignore
