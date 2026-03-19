@@ -171,6 +171,20 @@ function headless_mode_activate() {
 register_activation_hook( __FILE__, 'headless_mode_activate' );
 
 /**
+ * Plugin deactivation hook.
+ *
+ * Cleans up transients and scheduled events.
+ *
+ * @return void
+ */
+function headless_mode_deactivate() {
+	// Nothing to clean on deactivation for now.
+	// Options are preserved so settings survive deactivate/reactivate.
+	// Options are only removed on uninstall (delete).
+}
+register_deactivation_hook( __FILE__, 'headless_mode_deactivate' );
+
+/**
  * Run version upgrade routines.
  *
  * @return void
@@ -193,5 +207,12 @@ function headless_mode_maybe_upgrade() {
 }
 add_action( 'admin_init', 'headless_mode_maybe_upgrade' );
 
-// Initialize the plugin.
-Headless_Mode::get_instance();
+/**
+ * Initialize the plugin after all plugins are loaded.
+ *
+ * @return void
+ */
+function headless_mode_init() {
+	Headless_Mode::get_instance();
+}
+add_action( 'plugins_loaded', 'headless_mode_init' );

@@ -12,9 +12,25 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-// Remove plugin options.
-delete_option( 'headless_mode_settings' );
-delete_option( 'headless_mode_version' );
+/**
+ * Remove plugin options for a single site.
+ *
+ * @return void
+ */
+function headless_mode_delete_options() {
+	delete_option( 'headless_mode_settings' );
+	delete_option( 'headless_mode_version' );
+	delete_option( 'hm_settings' ); // Legacy option.
+}
 
-// Remove legacy option if it still exists.
-delete_option( 'hm_settings' );
+// Handle multisite.
+if ( is_multisite() ) {
+	$sites = get_sites( array( 'fields' => 'ids' ) );
+	foreach ( $sites as $site_id ) {
+		switch_to_blog( $site_id );
+		headless_mode_delete_options();
+		restore_current_blog();
+	}
+} else {
+	headless_mode_delete_options();
+}
