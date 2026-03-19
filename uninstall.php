@@ -37,14 +37,14 @@ function headless_mode_uninstall_cleanup() {
 
 // Handle multisite: clean each site individually.
 if ( is_multisite() ) {
-	$site_ids = get_sites(
+	$goheadless_site_ids = get_sites(
 		array(
 			'fields'   => 'ids',
 			'number'   => 0, // All sites.
 		)
 	);
-	foreach ( $site_ids as $site_id ) {
-		switch_to_blog( $site_id );
+	foreach ( $goheadless_site_ids as $goheadless_site_id ) {
+		switch_to_blog( $goheadless_site_id );
 		headless_mode_uninstall_cleanup();
 		restore_current_blog();
 	}

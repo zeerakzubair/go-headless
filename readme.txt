@@ -1,14 +1,14 @@
-=== GoHeadless — WordPress & WooCommerce Headless CMS ===
+=== GoHeadless — Headless CMS for WordPress and WooCommerce ===
 Contributors: zeerakzubair
-Tags: headless, woocommerce, api, decoupled, rest-api, headless cms, nextjs, gatsby
+Tags: headless, decoupled, rest-api, api, cms
 Requires at least: 5.8
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Convert your WordPress or WooCommerce site into a headless CMS. Block frontend access while keeping REST API, Store API, and wp-admin fully functional.
+Turn WordPress into a headless CMS. Block frontend, keep REST API and wp-admin fully functional.
 
 == Description ==
 

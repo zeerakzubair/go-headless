@@ -104,7 +104,7 @@ class Headless_Mode_Frontend {
 		wp_die(
 			'<h1>' . esc_html__( 'GoHeadless', 'goheadless' ) . '</h1><p>' . esc_html( $this->settings['message'] ) . '</p>',
 			esc_html__( 'GoHeadless', 'goheadless' ),
-			array( 'response' => $response_code )
+			array( 'response' => (int) $response_code )
 		);
 	}
 

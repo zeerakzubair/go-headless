@@ -64,12 +64,8 @@ class Headless_Mode {
 	 * @return void
 	 */
 	private function load_textdomain() {
-		add_action(
-			'init',
-			function () {
-				load_plugin_textdomain( 'goheadless', false, dirname( HEADLESS_MODE_BASENAME ) . '/languages' );
-			}
-		);
+		// Translations are loaded automatically by WordPress.org for hosted plugins.
+		// No manual load_plugin_textdomain() call needed since WP 4.6.
 	}
 
 	/**
